@@ -1,0 +1,147 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+.container {
+    width: 750px;
+    height: 500px;
+}
+
+.left {    
+    float: left;
+    width: 150px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    float: right;
+    width: 350px;
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background-wave {
+    position: absolute;
+    justify-content: center;
+}
+
+#description {
+    position: relative;
+    left: 45px;
+}
+
+.icon {
+    width: 70px;
+    height: fit-content;
+    text-align: center;
+}
+
+#neck {
+    margin-left: 10px;
+}
+
+.title {
+    color: #FBFBFB;
+    font-size: 40px;
+    text-align: center;
+}
+
+#sub-title {
+    color: #FBFBFB;
+    font-size: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: #06814D;
+    font-style: bold;
+    text-align: center;
+}
+
+form {
+    vertical-align: middle;
+}
+
+.inputform {
+    width: 400px;
+    height: 40px;
+    margin-top: 7px;
+
+    color: #333333;
+    font-size: 12px;
+    padding-left: 10px;
+
+    border-color: #06814D;
+    border-left-width:0;
+    border-right-width:0;
+    border-top-width:0;
+    border-bottom-width:1;
+}
+
+input::placeholder {
+    color: #CFCFCF;
+    font-size: 12px;
+}
+
+#input-date {
+    width: 190px;
+    height: 40px;
+    margin-top: 10px;
+    
+    color: #333333;
+    font-size: 12px;
+    padding-left: 10px;
+
+    border-color: #06814D;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 1;
+}
+
+#input-gender {
+    width: 190px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 15px;
+
+    color: #333333;
+    font-size: 12px;
+    padding-left: 10px;
+
+    border-color: #06814D;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 2;
+}
+ 
+#caution {
+    color: #CFCFCF;
+    font-size: 10px;
+}
+
+.check {
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+}
+
+#signup {
+    width: 400px;
+    height: 50px;
+    margin-top: 30px;
+
+    color: #FBFBFB;
+    background-color: #06814D;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+}

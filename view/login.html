@@ -1,0 +1,40 @@
+<!-- /Users/joeun/Electron/Vision-Necktitude/view/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="/Users/joeun/Electron/Vision-Necktitude/style/login.css">
+
+</head>
+<body style="background: linear-gradient(#09AF69CC, #09AF69E6, #09AF69FF)">
+    <script src="script.js"></script>
+
+    <div class="container">
+        <div class="center">
+            <h1>Vision Necktitude</h1>
+            <form>
+                <!-- 정보 입력 -->
+                <section id="id">
+                    <input id="ID" class="inputform" type="text" placeholder="ID">
+                </section>
+                <section id="password">
+                    <input id="PW" class="inputform" type="password" placeholder="Password">
+                </section>
+    
+                <!-- 체크박스 동의 -->
+                <section>
+                    <input type="checkbox" class="login-remain" id="login-remain">
+                    <label for="login-remain" class="login-remain">로그인 유지</label>
+                </section>
+    
+                <!-- 회원가입 버튼 -->
+                <button id="login">로그인</button>
+            </form>
+            <span id="find-id" class="text">아이디 찾기</span>
+            <span id="find-password" class="text">비밀번호 찾기</span>
+            <span id="sign-up" class="text">회원가입</span>
+        </div>
+    </div>
+</body>

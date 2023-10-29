@@ -1,0 +1,60 @@
+<!-- file:///Users/joeun/Electron/Vision-Necktitude/view/signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="/Users/joeun/Electron/Vision-Necktitude/style/signup.css">
+</head>
+<body>
+    <div class="container"> 
+        <div class="left">
+            <img src="/Users/joeun/Electron/Vision-Necktitude/style/wave.png" alt="wave" id="background-wave" height="500px">
+            <div id="description">
+                <img src="/Users/joeun/Electron/Vision-Necktitude/icon/eye-drop.png" alt="eye" id="eye" class="icon">
+                <img src="/Users/joeun/Electron/Vision-Necktitude/icon/neck.png" alt="neck" id="neck" class="icon">
+                <br><span class="title">Vision</span><br>
+                <span class="title">Necktitude</span><br>
+                <span id="sub-title">Lifestyle Improvement Application</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="child">
+                <h1>Create Account</h1>
+                <form>
+                    <!-- 정보 입력 -->
+                    <section>
+                        <input class="inputform" type="text" placeholder="Name">
+                    </section>
+                    <section>        
+                        <input class="inputform" type="date" id="input-date">
+                        <select class="inputform" id="input-gender">
+                            <option selected>남</option>
+                            <option>여</option>
+                        </select>
+                    </section>
+                    <section>
+                        <input class="inputform" type="text" placeholder="ID">
+                    </section>
+                    <section>
+                        <input class="inputform" type="password" placeholder="Password">
+                    </section>
+                    <p id="caution">비밀번호는 영문, 숫자를 포함하여 8자리 이상이어야 합니다.</p>
+            
+                    <!-- 체크박스 동의 -->
+                    <section>
+                        <input type="checkbox" class="check" id="privacy">
+                        <label for="privacy" class="check"><b>[필수]</b> 개인정보 수집 및 이용에 동의합니다.</label>
+                        <br>
+                        <input type="checkbox" class="check" id="push">
+                        <label for="push" class="check"><b>[필수]</b> 푸시 알림을 허용합니다.</label>    
+                    </section>
+            
+                    <!-- 회원가입 버튼 -->
+                    <button id="signup">회원가입</button>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
