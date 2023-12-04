@@ -8,13 +8,19 @@
     height: 450px;    
 }
 
+#ic_close {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
 #title {
     font-size: 18px;
     text-align: center;
 
     width: 200px;
     height: 40px;
-    margin: 30px auto;
+    margin: auto;
+    margin-bottom: 30px;
 
     color: #06814D;
     background-color: #FBFBFB;
@@ -27,7 +33,8 @@
 .left {    
     float: left;
     width: 375px;
-    height: 450px;
+
+    padding-bottom: 50px;
 
     display: flex;
     flex-direction: column;
@@ -39,7 +46,8 @@
 .right {
     float: right;
     width: 374px;
-    height: 450px;
+
+    padding-bottom: 50px;
 
     display: flex;
     flex-direction: column;
@@ -47,7 +55,7 @@
 }
 
 #find_id_title, #find_pw_title {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .inputform {
@@ -67,7 +75,7 @@
 }
 
 #find_id, #find_pw {
-    width: 310px;
+    width: 300px;
     height: 40px;
     margin-top: 30px;
 
@@ -75,12 +83,12 @@
     background-color: #06814D;
     text-align: center;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
-/* #bottom {
+#bottom {
     width: 750px;
     height: 50px;
 
     background-color: #06814D;
-} */
+}
