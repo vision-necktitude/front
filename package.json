@@ -5,11 +5,74 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build:osx": "build --mac",
+    "build:linux": "npm run build:linux32 && npm run build:linux64",
+    "build:linux32": "build --linux --ia32",
+    "build:linux64": "build --linux --x64",
+    "build:win": "npm run build:win32 && npm run build:win64",
+    "build:win32": "build --win --ia32",
+    "build:win64": "build --win --x64"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "dropbox": "^2.5.12",
+    "electron-is-dev": "latest",
+    "sql.js": "^1.9.0",
+    "xml2json-light": "^1.0.6"
+  },
   "devDependencies": {
-    "electron": "^25.3.2"
+    "electron": "^25.3.2",
+    "electron-builder": "^22.4.1",
+    "electron-is-dev": "latest",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "productName": "HelloElectron",
+    "appId": "com.electron.hello",
+    "asar": true,
+    "protocols": {
+      "name": "helloElectron",
+      "schemes": [
+        "helloelectron"
+      ]
+    },
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "Vision-Necktitude/icon"
+    },
+    "dmg": {
+      "title": "HelloElectron",
+      "icon": "Vision-Necktitude/icon"
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": ""
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "zip",
+        "tar.gz"
+      ],
+      "icon": "Vision-Necktitude/icon"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "buildResources": "/Vision-Necktitude",
+      "output": "dist/",
+      "app": "."
+    }
   }
 }
