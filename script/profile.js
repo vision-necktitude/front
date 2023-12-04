@@ -12,13 +12,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var url = "https://vision-necktitude.shop"; // API 엔드포인트 URL
 
-        fetch(url + "/test/log")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data); // 받아온 데이터 활용
-        })
-        .catch(error => console.error('Error:', error));
-    });
+        // fetch(url + "/test/log")
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log(data); // 받아온 데이터 활용
+        // })
+        // .catch(error => console.error('Error:', error));
 
-    
+        // Axios 스크립트를 로드
+        var axiosScript = document.createElement("script");
+        axiosScript.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
+        
+        axiosScript.onload = function () {
+            // 로드가 완료되면 axios를 사용하여 API 요청
+            axios.get(url + "/test/log")
+                .then(function (response) { // 성공적으로 받아온 경우
+                    console.log(response.data);
+                })
+                .catch(function (error) { // 에러 처리
+                    console.error('Error:', error);
+                });
+        };
+        document.head.appendChild(axiosScript);
+    });
 });
