@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     document.getElementById("login").addEventListener("click", function () {    
+        const log = require("electron-log");
+        log.info("Hello, Electron!");
+        
         event.preventDefault(); // 기본 동작 중지
+
+
 
         const inputID = document.getElementById("ID").value;
         const inputPassword = document.getElementById("PW").value;

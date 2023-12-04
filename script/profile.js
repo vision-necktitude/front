@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const log = require('electron-log')
+
     // 이전 페이지로 이동
     document.getElementById("ic_close").addEventListener("click", function () {
         // 이전 페이지(로그인)으로 이동
@@ -9,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 이름 변경 API
     document.getElementById("edit_name").addEventListener("click", function () {
         alert("닉네임을 변경합니다.");
+        log.info('log test');
 
         var url = "https://vision-necktitude.shop"; // API 엔드포인트 URL
 
@@ -22,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Axios 스크립트를 로드
         var axiosScript = document.createElement("script");
         axiosScript.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
-        
+
         axiosScript.onload = function () {
             // 로드가 완료되면 axios를 사용하여 API 요청
             axios.get(url + "/test/log")

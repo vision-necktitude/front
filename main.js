@@ -8,7 +8,8 @@ const createWindow = () => {
         webPreferences: { preload: path.join(__dirname, 'preload.js') }
     });
  
-    win.loadFile('login.html');
+    win.loadFile('index.html');
+    win.webContents.openDevTools();
 };
  
 app.whenReady().then(() => {
