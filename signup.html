@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="style/signup.css">
 </head>
 <body>
+    <script src="script/signup.js"></script>
+
     <div class="container"> 
         <div class="left">
-            <img src="/Users/joeun/Electron/Vision-Necktitude/style/wave.png" alt="wave" id="background-wave" height="500px">
+            <img src="Vision-Necktitude/style/wave.png" alt="wave" id="background-wave" height="500px">
             <div id="description">
-                <img src="/Users/joeun/Electron/Vision-Necktitude/icon/eye-drop.png" alt="eye" id="eye" class="icon">
-                <img src="/Users/joeun/Electron/Vision-Necktitude/icon/neck.png" alt="neck" id="neck" class="icon">
+                <img src="Vision-Necktitude/icon/eye-drop.png" alt="eye" id="eye" class="icon">
+                <img src="Vision-Necktitude/icon/neck.png" alt="neck" id="neck" class="icon">
                 <br><span class="title">Vision</span><br>
                 <span class="title">Necktitude</span><br>
                 <span id="sub-title">Lifestyle Improvement Application</span>
@@ -25,11 +27,11 @@
                 <form>
                     <!-- 정보 입력 -->
                     <section>
-                        <input class="inputform" type="text" placeholder="Name">
+                        <input id="input-name" class="inputform" type="text" placeholder="Name">
                     </section>
                     <section>        
-                        <input class="inputform" type="date" id="input-date">
-                        <select class="inputform" id="input-gender">
+                        <input id="input-date" class="inputform" type="date">
+                        <select id="input-gender" class="inputform">
                             <option selected>남</option>
                             <option>여</option>
                         </select>

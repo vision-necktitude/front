@@ -4,15 +4,13 @@
 ### custom ###
 .yml
 node_modules/
+dist/
 
 ### macOS ###
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Icon must end with two \r
-Icon
 
 
 # Thumbnails
