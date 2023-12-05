@@ -1,18 +1,75 @@
+var axiosScript = document.createElement("script");
+axiosScript.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
+
+const apiUrl = "https://vision-necktitude.shop";   // API 엔드포인트 URL
+
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("signup").addEventListener("click", function () {    
+    // 회원가입 API
+    document.getElementById("signup").addEventListener("click", function (event) {    
         event.preventDefault(); // 기본 동작 중지
 
-        const inputID = document.getElementById("ID").value;
-        const inputPassword = document.getElementById("PW").value;
+        const inputName = document.getElementById("input-name").value;
+        const inputId = document.getElementById("input-id").value;
+        const inputPassword = document.getElementById("input-pw").value;
+        const inputDate = document.getElementById("input-date").value;
+        let inputGender = document.getElementById("input-gender").value;
     
-        // ID와 Password가 비어 있지 않은 경우에만 로그인 시도
-        if (inputID.trim() !== "" && inputPassword.trim() !== "") {            
-            console.log("로그인 성공~");
-            alert("로그인 성공!");            
-            window.location.href = "info.html"; // "signup.html"은 회원가입 페이지의 경로입니다
-        } else {
-            alert("ID와 Password를 모두 입력하세요.");
-            console.log("로그인 실패~")
-        }    
+        // 모든 정보가 비어있지 않아야 회원가입이 가능
+        if(inputName.trim() == "" || inputId.trim() == "" || inputPassword.trim() == ""
+            || inputDate.trim() == "" || inputGender.trim() == "") {
+                alert("필수 항목을 모두 입력해야합니다");
+                return;
+            }
+
+        if(!document.getElementById("privacy").checked || !document.getElementById("push").checked) {
+            alert("필수 동의 항목에 모두 체크해야합니다");
+            return;
+        }
+
+        inputGender = (inputGender == "남") ? "male" : "female";
+
+        const user = {
+            name: inputName,
+            sex: inputGender,
+            birthday: inputDate,
+            id: inputId,
+            password: inputPassword
+        };
+
+        const body = JSON.stringify(user);
+        console.log(body);
+
+        axiosScript.onload = function () {
+            console.log(body);
+
+            axios.post(apiUrl + "/member/signup", body, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                withCredentials: true,
+            })
+            .then(response => {  // 성공적으로 받아온 경우
+                const res = response.data;
+                console.log("success", res);
+
+                console.log("회원가입 성공");
+                alert("회원가입되었습니다!");
+
+                history.back(); 
+            })
+            .catch(error => {  // 에러 처리
+                console.error("fail", error.response);
+                alert(error.response.data.message);
+            })
+            .finally(() => {
+                document.getElementById("input-name").value = null;
+                document.getElementById("input-id").value = null;
+                document.getElementById("input-pw").value = null;
+                document.getElementById("input-date").value = null;
+                document.getElementById("input-gender").value = null;
+            });
+        };
+
+        document.head.appendChild(axiosScript);
     });
 });
