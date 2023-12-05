@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const log = require('electron-log')
-
     // 이전 페이지로 이동
     document.getElementById("ic_close").addEventListener("click", function () {
         // 이전 페이지(로그인)으로 이동
@@ -11,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // 이름 변경 API
     document.getElementById("edit_name").addEventListener("click", function () {
         alert("닉네임을 변경합니다.");
-        log.info('log test');
 
         var url = "https://vision-necktitude.shop"; // API 엔드포인트 URL
 
