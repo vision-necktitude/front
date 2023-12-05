@@ -62,7 +62,12 @@
     margin-top: 10px;
 }
 
-#edit_name, #edit_id, #edit_pw {
+#edit_id {
+    margin-left: 10px;
+    visibility: hidden;
+}
+
+#edit_name, #edit_pw {
     margin-left: 10px;
 }
 

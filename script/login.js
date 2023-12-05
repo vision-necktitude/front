@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById("id").value = null;
                     document.getElementById("pw").value = null;
 
-                    window.location.href = "profile.html";
+                    window.location.href = "info.html";
                 })
                 .catch(error => {  // 에러 처리
                     console.error("fail", error.response.data);

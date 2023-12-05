@@ -3,6 +3,9 @@ axiosScript.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
 
 const apiUrl = "https://vision-necktitude.shop";   // API 엔드포인트 URL
 
+let userName;
+let userId;
+
 document.addEventListener("DOMContentLoaded", function() {
     // 이전 페이지로 이동
     document.getElementById("ic_close").addEventListener("click", function () {
@@ -10,6 +13,34 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("이전 페이지로 이동합니다.");
         history.back(); 
     });
+
+    // 유저 정보 반환 API
+    axiosScript.onload = function () {
+        // Axios를 사용하여 POST 요청 보내기
+        axios.get(apiUrl + "/member/member-page", {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("jwt")
+            },
+            withCredentials: true,
+        })
+        .then(response => {  // 성공적으로 받아온 경우
+            const res = response.data;
+            console.log("success", res);
+
+            userName = res.result.name;
+            userId = res.result.id;
+
+            document.getElementById("input_name").value = userName
+            document.getElementById("input_id").value = userId;
+        })
+        .catch(error => {  // 에러 처리
+            console.error("fail", error.response);
+            alert(error.response);
+        });
+    };
+
+    document.head.appendChild(axiosScript);
            
     // 이름 변경 API
     document.getElementById("edit_name").addEventListener("click", function () {
@@ -39,27 +70,27 @@ document.addEventListener("DOMContentLoaded", function() {
             const body = JSON.stringify(name);
             console.log(body);
 
-            axiosScript.onload = function () {
-                // Axios를 사용하여 POST 요청 보내기
-                axios.post(apiUrl + "/member/modify/name", body, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": "Bearer " + localStorage.getItem("jwt")
-                    },
-                    withCredentials: true,
-                })
-                .then(response => {  // 성공적으로 받아온 경우
-                    const res = response.data;
-                    console.log("success", res);
+            // Axios를 사용하여 POST 요청 보내기
+            axios.post(apiUrl + "/member/modify/name", body, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("jwt")
+                },
+                withCredentials: true,
+            })
+            .then(response => {  // 성공적으로 받아온 경우
+                const res = response.data;
+                console.log("success", res);
 
-                    console.log("이름 변경 성공");
-                    alert("닉네임이 변경되었습니다");
-                })
-                .catch(error => {  // 에러 처리
-                    console.error("fail", error.response);
-                    alert(error.response.data.body.message);
-                });
-            };
+                console.log("이름 변경 성공");
+                alert("닉네임이 변경되었습니다");
+            })
+            .catch(error => {  // 에러 처리
+                console.error("fail", error.response);
+                alert(error.response.data.body.message);
+
+                document.getElementById("input_name").value = userName;
+            });
 
             document.head.appendChild(axiosScript);
         } else {
@@ -67,6 +98,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
             console.log("안도이");
             alert("이름을 입력하세요.");
+        }
+    });
+
+    // 비밀번호 변경 API
+    document.getElementById("edit_pw").addEventListener("click", function () {
+        const inputPassword = document.getElementById("input_pw").value;
+
+        if(inputPassword.trim() != "") {
+            const password = {
+                password: inputPassword
+            };
+
+            const body = JSON.stringify(password);
+            console.log(body);
+
+            // Axios를 사용하여 POST 요청 보내기
+            axios.post(apiUrl + "/member/modify/password", body, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("jwt")
+                },
+                withCredentials: true,
+            })
+            .then(response => {  // 성공적으로 받아온 경우
+                const res = response.data;
+                console.log("success", res);
+
+                console.log("비밀번호 변경 성공");
+                alert("비밀번호가 변경되었습니다");
+            })
+            .catch(error => {  // 에러 처리
+                console.error("fail", error.response);
+                alert(error.response.data.body.message);
+
+                document.getElementById("input_pw").value = null;
+            });
+
+            document.head.appendChild(axiosScript);
+        } else {
+            // document.getElementById("pw").value = null;  // 가져온 값으로
+
+            console.log("안도이");
+            alert("비밀번호를 입력하세요.");
         }
     });
 });
