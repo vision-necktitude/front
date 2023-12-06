@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* 전체 태그 초기화 및 초기 세팅 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+}
+
+.container {
+    max-width: 750px;
+    max-height: 500px;
+
+    width: 750px;
+    height: 500px;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+    background-color: #B7D7C1;
+
+    width: 550px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#list-chart {
+    width: auto;
+    height: 40px;
+    
+    align-items: center;
+    background-color: #06814D;
+    color: #FFFFFF;
+
+    border: 2px solid #06814D;
+    border-radius: 10px;
+}
+
+.navbar {
+    width: 150px;
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.navmenu {
+    list-style-type: none;
+}
+
+#link-date {
+    color: #FFFFFF;
+}
+
+.link {
+    text-decoration-line: none;
+    color: #06814D;
+    font-size: 12px;
+
+    margin-left: 7px;
+}
+
+li {
+    width: auto;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#calender-container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+
+    padding: 20px;
+
+    max-width: 500px;
+    max-height: 420px;
+
+    width: 500px;
+    height: 420px;
+
+    align-items: center;
+    justify-content: center;
+}
+ 
+/* button 요소에 기본적으로 설정되는 스타일 속성 초기화 */
+.btn_move {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 0 20px; 
+}
+
+.nav .current-date {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #878787;
+}
+
+/* 요일과 날짜를 가로로 배치 */
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar .weeks li {
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 요일과 날짜의 width 값 */
+.calendar ul li {
+    width: calc(100% / 7);
+    position: relative;
+}
+
+/* 오늘 날짜 표시를 위해 li 요소를 살짝 띄워줌 */ 
+.calendar .days li {
+    z-index: 1;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* 이전 달의 날짜와 색상 다르게 적용 */
+.days li.inactive {
+    color: #aaaaaa;    
+}
+
+.days li.active {
+    color: #ffffff;
+}
+
+.calendar .days li::before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+.days li:hover::before {
+    background: #f2f2f2;
+}
+.days li.active::before {
+    background: #008aff;
+}

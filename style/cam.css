@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #333333;
 }
@@ -67,8 +69,6 @@ li {
 
     display: flex;
     align-items: center;
-
-    margin-left: -40px;
 
     padding-left: 20px;
     padding-right: 20px;
