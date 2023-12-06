@@ -17,9 +17,6 @@
     float: left;
     width: 275px;
     height: 500px;
-
-    display: flex;
-    align-items: center;
 }
 
 .right {
@@ -35,34 +32,53 @@
 #background-wave {
     width: 275px;
     position: absolute;
-    justify-content: center;
+}
+
+#ic_close {
+    margin: 30px;
+    position: relative;
+    align-items: start;
 }
 
 #description {
+    margin-top: 70px;
+    margin-left: -35px;
+}
+
+#image {
     position: relative;
-    left: 45px;
-}
-
-.icon {
-    width: 60px;
-    height: fit-content;
-    text-align: center;
-}
-
-#neck {
-    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     color: #FBFBFB;
     font-size: 30px;
-    text-align: center;
 }
 
 #sub-title {
     color: #FBFBFB;
     font-size: 10px;
+}
+
+#app-title {
+    position: relative;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
+}
+
+.icon {
+    width: 60px;
+    height: fit-content;
+}
+
+#neck {
+    margin-left: 10px;
 }
 
 h1 {
@@ -132,10 +148,13 @@ input::placeholder {
 #caution {
     color: #CFCFCF;
     font-size: 10px;
+    margin-top: 5px;
 }
 
 .check {
     font-size: 12px;
+    margin-top: 5px;
+
     width: 12px;
     height: 12px;
 }
