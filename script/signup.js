@@ -3,7 +3,13 @@ axiosScript.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
 
 const apiUrl = "https://vision-necktitude.shop";   // API 엔드포인트 URL
 
+let axiosReady = false;
+
 document.addEventListener("DOMContentLoaded", function() {
+    axiosScript.onload = function () {
+        axiosReady = true;
+    }
+
     // 회원가입 API
     document.getElementById("signup").addEventListener("click", function (event) {    
         event.preventDefault(); // 기본 동작 중지
@@ -39,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const body = JSON.stringify(user);
         console.log(body);
 
-        axiosScript.onload = function () {
+        if(axiosReady) {
             console.log(body);
 
             axios.post(apiUrl + "/member/signup", body, {
