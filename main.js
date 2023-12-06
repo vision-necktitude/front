@@ -5,7 +5,12 @@ const createWindow = () => {
     const win = new BrowserWindow({
         width: 755,
         height: 530,
-        webPreferences: { preload: path.join(__dirname, 'preload.js') }
+        webPreferences: { 
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
+            preload: path.join(__dirname, 'preload.js') 
+        }
     });
  
     win.loadFile('index.html');

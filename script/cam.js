@@ -1,18 +1,45 @@
-const video = document.getElementById("video");
+document.addEventListener("DOMContentLoaded", function() {
+    // fastAPI 실행 코드
+    setTimeout(() => {
+        console.log("2초가 지났습니다.");
 
-const startButton = document.getElementById("카메라 켜기");
-const stopButton = document.getElementById("카메라 끄기");
+        const path = require('path');
+        const {shell} = require('electron');
+        const batFilePath = path.join(__dirname, 'vision-necktitude-ai', 'env_setting.bat');
 
-startButton.addEventListener("click", () => {
-  // 웹캠을 시작합니다.
-  navigator.mediaDevices.getUserMedia({
-    video: true
-  }).then((stream) => {
-    video.srcObject = stream;
-  });
-});
+        console.log(batFilePath)
+        shell.openPath(batFilePath);
+    }, 2000);
 
-stopButton.addEventListener("click", () => {
-  // 웹캠을 중지합니다.
-  video.srcObject.getTracks().forEach((track) => track.stop());
+    document.getElementById("start").addEventListener("click", () => {
+        var url = "http://localhost:8000/init";
+        console.log(url);
+
+        fetch(url)
+            .then(response => {
+            if (!response.ok) {
+                throw new Error('API 오류!');
+            }
+            return response.json();
+            })
+            .catch(error => {
+            console.log('There was a problem with the fetch operation:', error);
+            });
+        });
+
+    document.getElementById("stop").addEventListener("click", () => {
+        var url = "http://localhost:8000/end";
+        console.log(url);
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('API 오류!');
+                }
+                return response.json();
+            })
+            .catch(error => {
+                console.log('There was a problem with the fetch operation:', error);
+        });
+    });
 });
