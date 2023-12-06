@@ -4,13 +4,16 @@
 }
 
 .container {
+    max-width: 750px;
+    max-height: 500px;
+
     width: 750px;
     height: 500px;
 }
 
 .left {    
     float: left;
-    width: 150px;
+    width: 275px;
     height: 500px;
 
     display: flex;
@@ -19,7 +22,7 @@
 
 .right {
     float: right;
-    width: 350px;
+    width: 475px;
     height: 500px;
 
     display: flex;
@@ -28,6 +31,7 @@
 }
 
 #background-wave {
+    width: 275px;
     position: absolute;
     justify-content: center;
 }
@@ -38,7 +42,7 @@
 }
 
 .icon {
-    width: 70px;
+    width: 60px;
     height: fit-content;
     text-align: center;
 }
@@ -49,7 +53,7 @@
 
 .title {
     color: #FBFBFB;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
 }
 

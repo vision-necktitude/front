@@ -4,8 +4,14 @@ axiosScript.src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
 const apiUrl = "https://vision-necktitude.shop";   // API 엔드포인트 URL
 const config = {"Content-Type": "application/json"};
 
+let axiosReady = false;
+
 // 동적 기능
 document.addEventListener("DOMContentLoaded", function() {
+
+    axiosScript.onload = function () {  
+        axiosReady = true;
+    }
 
     document.getElementById("login").addEventListener("click", function (event) {    
         event.preventDefault(); // 기본 동작 중지
@@ -23,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const body = JSON.stringify(userData)
             console.log(body)
 
-            axiosScript.onload = function () {
+            if(axiosReady) {
                 // Axios를 사용하여 POST 요청 보내기
                 axios.post(apiUrl + "/member/login", body, {
                     headers: config,
@@ -42,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     document.getElementById("id").value = null;
                     document.getElementById("pw").value = null;
 
-                    window.location.href = "info.html";
+                    window.location.href = "cam.html";
                 })
                 .catch(error => {  // 에러 처리
                     console.error("fail", error.response.data);

@@ -1,21 +1,23 @@
 <!-- file:///Users/joeun/Electron/Vision-Necktitude/view/signup.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up</title>
     <link rel="stylesheet" href="style/signup.css">
 </head>
+
 <body>
     <script src="script/signup.js"></script>
 
-    <div class="container"> 
+    <div class="container">
         <div class="left">
-            <img src="Vision-Necktitude/style/wave.png" alt="wave" id="background-wave" height="500px">
+            <img src="style/wave.png" alt="wave" id="background-wave" height="500px">
             <div id="description">
-                <img src="Vision-Necktitude/icon/eye-drop.png" alt="eye" id="eye" class="icon">
-                <img src="Vision-Necktitude/icon/neck.png" alt="neck" id="neck" class="icon">
+                <img src="icon/eye-drop.png" alt="eye" id="eye" class="icon">
+                <img src="icon/neck.png" alt="neck" id="neck" class="icon">
                 <br><span class="title">Vision</span><br>
                 <span class="title">Necktitude</span><br>
                 <span id="sub-title">Lifestyle Improvement Application</span>
@@ -29,7 +31,7 @@
                     <section>
                         <input id="input-name" class="inputform" type="text" placeholder="Name">
                     </section>
-                    <section>        
+                    <section>
                         <input id="input-date" class="inputform" type="date">
                         <select id="input-gender" class="inputform">
                             <option selected>남</option>
@@ -37,26 +39,28 @@
                         </select>
                     </section>
                     <section>
-                        <input class="inputform" type="text" placeholder="ID">
+                        <input id="input-id" class="inputform" type="text" placeholder="ID">
                     </section>
                     <section>
-                        <input class="inputform" type="password" placeholder="Password">
+                        <input id="input-pw" class="inputform" type="password" placeholder="Password">
                     </section>
                     <p id="caution">비밀번호는 영문, 숫자를 포함하여 8자리 이상이어야 합니다.</p>
-            
+
                     <!-- 체크박스 동의 -->
                     <section>
-                        <input type="checkbox" class="check" id="privacy">
+                        <input id="privacy" type="checkbox" class="check">
                         <label for="privacy" class="check"><b>[필수]</b> 개인정보 수집 및 이용에 동의합니다.</label>
                         <br>
-                        <input type="checkbox" class="check" id="push">
-                        <label for="push" class="check"><b>[필수]</b> 푸시 알림을 허용합니다.</label>    
+                        <input id="push" type="checkbox" class="check">
+                        <label for="push" class="check"><b>[필수]</b> 푸시 알림을 허용합니다.</label>
                     </section>
-            
+
                     <!-- 회원가입 버튼 -->
                     <button id="signup">회원가입</button>
                 </form>
             </div>
         </div>
+    </div>
 </body>
+
 </html>
