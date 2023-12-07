@@ -1,191 +1,66 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>info</title>
-
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info</title>
+  <link rel="stylesheet" href="style/info.css">
 </head>
 
-<nav class="navbar">
-  <ul class="nav_menu">
-    <li><a href="date.html">생활 습관 통계</a></li>
-    <li><a href="cam.html">내 화면</a></li>
-    <li><a href="info.html">정보</a></li>
-    <li><a href="setting.html">설정</a></li>
-  </ul>
-</nav>
-
-<aside class="side-bar">
-  
-
-  
-  <ul>
-    <li>
-       <a href="date.html"><img src="icon/ic_chart.png"> 생활 습관 통계</a>
-     
-    </li>
-    <li>
-      <a href="cam.html"><img src="icon/ic_user.png">내 화면</a>
-      
-    </li>
-    <li>
-      <a href="info.html"><img src="icon/ic_search.png">정보</a>
-      
-    </li>
-    <li>
-      <a href="setting.html"><img src="icon/ic_verify.png">설정</a>
-      
-    </li>
-  </ul>
-</aside>
-
-<style>
-/* 노멀라이즈 시작 */
-body, ul, li {
-  margin: 0;
-  padding: 0;
-  list-style: none;   /* 해당 태그의 list-style을 none으로 하는 것으로 ●을 제거한다 */
-}
-
-a {
-  color: inherit;   /* 부모 엘리먼트의 값을 물려받는다 */
-  text-decoration: none;    /* 해당 태그의 text-decoration 속성을 none 값으로 하는 것으로 밑줄을 제거한다 */
-}
-/* 노멀라이즈 끝 */
-
-/* 커스텀 시작 */
-.side-bar > ul ul {
-  display: none;
-}
-
-
-/* 사이드바 시작 */
-
-/* 사이드바의 너비와 높이를 변수를 통해 통제 */
-:root {
-  --side-bar-width: 270px;
-  --side-bar-height: auto;
-}
-
-.side-bar {
-  position: fixed;    /* 스크롤을 따라오도록 지정 */
-  background-color: white;
-  width: var(--side-bar-width);
-  
-  margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
-}
-
-
-
-/* 모든 메뉴의 a에 속성값 부여 */
-.side-bar ul > li > a {
-  display: block;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  transition: .5s;
-}
-
-/* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
-.side-bar > ul > li {
-  position: relative;
-}
-
-/* 모든 메뉴가 마우스 인식 시 반응 */
-.side-bar ul > li:hover > a {
-  background-color: #3a7f52;
-  border-bottom: 1px solid white;
-}
-
-
-
-/* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
-.side-bar {
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0);
-  transition: .5s;
-}
-
-/* 마우스 인식 시 원래의 위치로 이동 */
-.side-bar:hover {
-  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
-}
-/* 사이드바 끝 */
-
-
-</style>
-
 <body>
+  <script src="script/info.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <div class="container">
-    <button id="button1">안구건조증</button>
-    <button id="button2">거북목 증후군</button>
+    <div id="left">
+      <nav class="navbar">
+        <ul class="navmenu">
+          <li id="list-chart">
+            <img id="chart" src="icon/ic_chart.png" width="20px" height="20px">
+            <a id="link-date" class="link" href="date.html">생활 습관 통계</a>
+          </li>
+          <li id="list-cam">
+            <img id="cam" src="icon/ic_user.png" width="20px" height="20px">
+            <a id="link-cam" class="link" href="cam.html">내 화면</a>
+          </li>
+          <li id="list-info">
+            <img id="info" src="icon/ic_search_checked.png" width="20px" height="20px">
+            <a id="link-info" class="link" href="info.html">정보</a>
+          </li>
+          <li>
+            <img id="setting" src="icon/ic_verify.png" width="20px" height="20px">
+            <a class="link" href="setting.html">설정</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="right">
+      <div id="info-page">
+        <nav id="info-nav">
+            <ul id="info-nav-list" class="info-nav">
+              <li class="info-title"><a class="title" href="#eye">안구건조증</a></li>
+              <li class="info-title"><a class="title" href="#neck">거북목 증후군</a></li>
+            </ul>
+        </nav>
+
+
+        <div id="swiper-container">
+          <div id="swiper-wrapper">
+            <div class="swiper-slide" id="eye">
+            </div>
+
+            <!-- 거북목 증후군 -->
+            <div class="swiper-slide" id="neck">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #bad2c5;
-  }
-
-     
-            
-          
-
-        
-
-.container {
-
-  background-color : white;
-            height: 500px;
-            width: 750px;
-            border-radius: 20px;
-			margin-left: 250px;
-			margin-top: 50px;
-}
-
-
-button {
- 
-  top: 50px;
-  width: 200px;
-  height: 50px;
-  border: none;
-  background-color: #fff;
-  color: #000;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #4cac6d;
-}
-
-button {
-  top: 0;
-}
-</style>
-<script>
-const container = document.querySelector(".container");
-
-const button1 = document.getElementById("button1");
-const button2 = document.getElementById("button2");
-
-button1.addEventListener("click", () => {
-  // 버튼 1을 클릭하면 처리할 코드를 작성합니다.
-});
-
-button2.addEventListener("click", () => {
-  // 버튼 2를 클릭하면 처리할 코드를 작성합니다.
-});
-</script>
 
 </html>
