@@ -1,351 +1,67 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hoverable Sidebar Menu HTML CSS & JavaScript</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Boxicons CSS -->
-    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <script src="script.js" defer></script>
-  </head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <nav class="navbar">
-    <ul class="nav_menu">
-      <li><a href="date.html">생활 습관 통계</a></li>
-      <li><a href="cam.html">내 화면</a></li>
-      <li><a href="info.html">정보</a></li>
-      <li><a href="setting.html">설정</a></li>
-    </ul>
-  </nav>
-
-<aside class="side-bar">
-  
-  
-  <ul>
-    <li>
-       <a href="date.html"><img src="icon/ic_chart.png"> 생활 습관 통계</a>
-     
-    </li>
-    <li>
-      <a href="cam.html"><img src="icon/ic_user.png">내 화면</a>
-      
-    </li>
-    <li>
-      <a href="info.html"><img src="icon/ic_search.png">정보</a>
-      
-    </li>
-    <li>
-      <a href="setting.html"><img src="icon/ic_verify.png">설정</a>
-      
-    </li>
-  </ul>
-</aside>
-
-<style>
-/* 노멀라이즈 시작 */
-body, ul, li {
-  margin: 0;
-  padding: 0;
-  list-style: none;   /* 해당 태그의 list-style을 none으로 하는 것으로 ●을 제거한다 */
-}
-
-a {
-  color: inherit;   /* 부모 엘리먼트의 값을 물려받는다 */
-  text-decoration: none;    /* 해당 태그의 text-decoration 속성을 none 값으로 하는 것으로 밑줄을 제거한다 */
-}
-/* 노멀라이즈 끝 */
-
-/* 커스텀 시작 */
-.side-bar > ul ul {
-  display: none;
-}
-
-
-/* 사이드바 시작 */
-
-/* 사이드바의 너비와 높이를 변수를 통해 통제 */
-:root {
-  --side-bar-width: 270px;
-  --side-bar-height: auto;
-}
-
-.side-bar {
-  position: fixed;    /* 스크롤을 따라오도록 지정 */
-  background-color: white;
-  width: var(--side-bar-width);
-  
-  margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
-}
-
-
-
-/* 모든 메뉴의 a에 속성값 부여 */
-.side-bar ul > li > a {
-  display: block;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  transition: .5s;
-}
-
-/* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
-.side-bar > ul > li {
-  position: relative;
-}
-
-/* 모든 메뉴가 마우스 인식 시 반응 */
-.side-bar ul > li:hover > a {
-  background-color: #3a7f52;
-  border-bottom: 1px solid white;
-}
-
-
-
-/* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
-.side-bar {
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0);
-  transition: .5s;
-}
-
-/* 마우스 인식 시 원래의 위치로 이동 */
-.side-bar:hover {
-  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
-}
-/* 사이드바 끝 */
-
-/* 커스텀 끝 */
-</style>
-
-      
-    <title>달력</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-
-        body { background-color : #bad2c5; 
-		
-  margin: 0;
-  padding: 0;
-  height: 100vh; /* 뷰포트 높이의 100%로 설정 */
-  overflow: hidden; /* 스크롤을 없애거나, 페이지의 내용이 넘칠 때 숨기려면 사용할 수 있습니다. */
-} 
-		
-
-        div {
-            background-color : white;
-            height: 500px;
-            width: 750px;
-            
-            padding: 20px;
-            margin: 0 auto;
-            border-radius:5px;
-            box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
-			margin-top: 50px; 
-			margin-bottom:50px;
-			border-radius: 20px;
-
-        }
-
-        td {
-            width: 200px;
-            height: 100px;
-        }
-
-        .Calendar {
-            text-align: center;
-        }
-
-        .Calendar>thead>tr:first-child>td {
-            font-family: 'Questrial', sans-serif;
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-
-        .Calendar>thead>tr:last-child>td {
-            font-family: 'Questrial', sans-serif;
-            font-weight: 600;     
-        }
-
-        .Calendar>tbody>tr>td>p {
-            font-family: 'Montserrat', sans-serif;
-            height: 45px;
-            width: 45px;
-            border-radius: 45px;
-            transition-duration: .2s;
-            line-height: 45px;
-            margin: 2.5px;
-            display: block;
-            text-align: center;
-        }        
-
-        .pastDay {
-            color: lightgray;
-        }
-
-        .today {
-            background-color: #4eac6e;            
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .futureDay {
-            background-color: #FFFFFF;
-            cursor: pointer;
-        }
-        .futureDay:hover{
-            background:#eee;
-        }
-
-        .futureDay.choiceDay,
-        .today.choiceDay {
-            background: #4eac6e;
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-        }
-td:nth-child(7) {
-color:blue;
-}
-td:nth-child(1) {
-color:red;
-}
-
-
-
-
-
-
-
-    </style>
-
- <script>
-        window.onload = function () { buildCalendar(); }    // 웹 페이지가 로드되면 buildCalendar 실행
-
-        let nowMonth = new Date();  // 현재 달을 페이지를 로드한 날의 달로 초기화
-        let today = new Date();     // 페이지를 로드한 날짜를 저장
-        today.setHours(0, 0, 0, 0);    // 비교 편의를 위해 today의 시간을 초기화
-
-        // 달력 생성 : 해당 달에 맞춰 테이블을 만들고, 날짜를 채워 넣는다.
-        function buildCalendar() {
-
-            let firstDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1);     // 이번달 1일
-            let lastDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0);  // 이번달 마지막날
-
-            let tbody_Calendar = document.querySelector(".Calendar > tbody");
-            document.getElementById("calYear").innerText = nowMonth.getFullYear();             // 연도 숫자 갱신
-            document.getElementById("calMonth").innerText = leftPad(nowMonth.getMonth() + 1);  // 월 숫자 갱신
-
-            while (tbody_Calendar.rows.length > 0) {                        // 이전 출력결과가 남아있는 경우 초기화
-                tbody_Calendar.deleteRow(tbody_Calendar.rows.length - 1);
-            }
-
-            let nowRow = tbody_Calendar.insertRow();        // 첫번째 행 추가           
-
-            for (let j = 0; j < firstDate.getDay(); j++) {  // 이번달 1일의 요일만큼
-                let nowColumn = nowRow.insertCell();        // 열 추가
-            }
-
-            for (let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate() + 1)) {   // day는 날짜를 저장하는 변수, 이번달 마지막날까지 증가시키며 반복  
-
-                let nowColumn = nowRow.insertCell();        // 새 열을 추가하고
-
-
-                let newDIV = document.createElement("p");
-                newDIV.innerHTML = leftPad(nowDay.getDate());        // 추가한 열에 날짜 입력
-                nowColumn.appendChild(newDIV);
-
-                if (nowDay.getDay() == 6) {                 // 토요일인 경우
-                    nowRow = tbody_Calendar.insertRow();    // 새로운 행 추가
-                }
-
-                if (nowDay < today) {                       // 지난날인 경우
-                    newDIV.className = "pastDay";
-                }
-                else if (nowDay.getFullYear() == today.getFullYear() && nowDay.getMonth() == today.getMonth() && nowDay.getDate() == today.getDate()) { // 오늘인 경우           
-                    newDIV.className = "today";
-                    newDIV.onclick = function () { choiceDate(this); }
-                }
-                else {                                      // 미래인 경우
-                    newDIV.className = "futureDay";
-                    newDIV.onclick = function () { choiceDate(this); }
-                }
-            }
-        }
-
-        // 날짜 선택
-        function choiceDate(newDIV) {
-            if (document.getElementsByClassName("choiceDay")[0]) {                              // 기존에 선택한 날짜가 있으면
-                document.getElementsByClassName("choiceDay")[0].classList.remove("choiceDay");  // 해당 날짜의 "choiceDay" class 제거
-            }
-            newDIV.classList.add("choiceDay");           // 선택된 날짜에 "choiceDay" class 추가
-        }
-
-        // 이전달 버튼 클릭
-        function prevCalendar() {
-            nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() - 1, nowMonth.getDate());   // 현재 달을 1 감소
-            buildCalendar();    // 달력 다시 생성
-        }
-        // 다음달 버튼 클릭
-        function nextCalendar() {
-            nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, nowMonth.getDate());   // 현재 달을 1 증가
-            buildCalendar();    // 달력 다시 생성
-        }
-
-        // input값이 한자리 숫자인 경우 앞에 '0' 붙혀주는 함수
-        function leftPad(value) {
-            if (value < 10) {
-                value = "0" + value;
-                return value;
-            }
-            return value;
-        }
-
-    </script>
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date</title>
+  <link rel="stylesheet" href="style/date.css">
 </head>
 
-<html>
-<head>
 <body>
-    <div>
-        <table class="Calendar">
-            <thead>
-                <tr>
-                    <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
-                    <td colspan="5">
-                        <span id="calYear"></span>년
-                        <span id="calMonth"></span>월
-                    </td>
-                    <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
-                </tr>
-                <tr>
-                    <td>일</td>
-                    <td>월</td>
-                    <td>화</td>
-                    <td>수</td>
-                    <td>목</td>
-                    <td>금</td>
-                    <td>토</td>
-                </tr>
-            </thead>
+  <script src="script/date.js"></script>
 
-            <tbody>
-            </tbody>
-        </table>
+  <div class="container">
+    <div id="left">
+      <nav class="navbar">
+        <ul class="navmenu">
+          <li id="list-chart">
+            <img id="chart" src="icon/ic_chart_checked.png" width="20px" height="20px">
+            <a id="link-date" class="link" href="date.html">생활 습관 통계</a>
+          </li>
+          <li id="list-cam">
+            <img id="cam" src="icon/ic_user.png" width="20px" height="20px">
+            <a id="link-cam" class="link" href="cam.html">내 화면</a>
+          </li>
+          <li>
+            <img id="info" src="icon/ic_search.png" width="20px" height="20px">
+            <a class="link" href="info.html">정보</a>
+          </li>
+          <li>
+            <img id="setting" src="icon/ic_verify.png" width="20px" height="20px">
+            <a class="link" href="setting.html">설정</a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
-</body>
-</head>
-</html>
+    <div id="right">
+      <div id="calender-container">
+        <div class="nav">
+          <button class="btn_move">
+            <img id="ic_left" src="icon/ic_left.png" width="20px" height="20px">
+          </button>
+          <p class="current-date"></p>
+          <button class="btn_move">
+            <img id="ic_right" src="icon/ic_right.png" width="20px" height="20px">
+          </button>
+          </span>
+        </div>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Sun</li>
+            <li>Mon</li>
+            <li>Tue</li>
+            <li>Wed</li>
+            <li>Thu</li>
+            <li>Fri</li>
+            <li>Sat</li>
+          </ul>
+          <ul class="days">
 
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

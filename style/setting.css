@@ -1,8 +1,17 @@
+/* 전체 태그 초기화 및 초기 세팅 */
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #333333;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    color: #FBFBFB;
+    height: 0.1px;
 }
 
 .container {
@@ -23,9 +32,15 @@
 
     width: 550px;
     height: 500px;
+
+    flex-direction: column;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#list-cam {
+#list-setting {
     align-items: center;
     background-color: #06814D;
     color: #FFFFFF;
@@ -40,7 +55,7 @@
 
     display: flex;
     justify-content: center;
-
+    
     background-color: #FFFFFF;
 }
 
@@ -50,7 +65,7 @@
     margin-left: 10px;
 }
 
-#link-cam {
+#link-setting {
     color: #FFFFFF;
 }
 
@@ -74,55 +89,46 @@ li {
     padding-right: 20px;
 }
 
-#content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#setting-else {
+    margin-top: 10px;
 }
 
-#control {
-    display: flex;
-    justify-content: center;
-    
-    margin-top: 20px;
-}
-
-#video {
-    width: 500px;
-    height: 350px;
-
-    background-color: #bfbfbf;
-    border: 2px solid #bfbfbf;
+.setting-box {
+    background-color: #FFFFFF;
     border-radius: 10px;
 
-    margin-top: 50px;
+    padding: 20px;
+
+    width: 460px;
+
+    align-items: center;
+    justify-content: center;
 }
 
-.camera-control {
-    border: none;
-    border-radius: 10px;
-
-    color: #FFFFFF;
-    font-size: 12px;
-
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+#eye-agree, #neck-agree, #info-agree {
+    font-size: 13px;
 
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.icon {
-    margin-right: 5px;
+.else {
+    font-size: 13px;
+
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-#start {
-    background-color: #06814D;
-}
-
-#stop {
-    background-color: #cc3d3d;
-    margin-left: 10px;
+.else-icon {
+    margin-right: 7px;
 }

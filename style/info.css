@@ -1,3 +1,4 @@
+/* 전체 태그 초기화 및 초기 세팅 */
 * {
     margin: 0;
     padding: 0;
@@ -23,9 +24,13 @@
 
     width: 550px;
     height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#list-cam {
+#list-info {
     align-items: center;
     background-color: #06814D;
     color: #FFFFFF;
@@ -40,7 +45,7 @@
 
     display: flex;
     justify-content: center;
-
+    
     background-color: #FFFFFF;
 }
 
@@ -50,7 +55,7 @@
     margin-left: 10px;
 }
 
-#link-cam {
+#link-info {
     color: #FFFFFF;
 }
 
@@ -74,55 +79,51 @@ li {
     padding-right: 20px;
 }
 
-#content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#control {
-    display: flex;
-    justify-content: center;
-    
-    margin-top: 20px;
-}
-
-#video {
-    width: 500px;
-    height: 350px;
-
-    background-color: #bfbfbf;
-    border: 2px solid #bfbfbf;
+#info-page {
+    background-color: #FFFFFF;
     border-radius: 10px;
 
-    margin-top: 50px;
-}
+    padding: 20px;
 
-.camera-control {
-    border: none;
-    border-radius: 10px;
+    max-width: 460px;
+    max-height: 390px;
 
-    color: #FFFFFF;
-    font-size: 12px;
+    width: 460px;
+    height: 390px;
 
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.icon {
-    margin-right: 5px;
-}
+#underbar {
+    width: 100px;
+    height: 1px;
 
-#start {
     background-color: #06814D;
 }
 
-#stop {
-    background-color: #cc3d3d;
-    margin-left: 10px;
+#info-nav-list {
+    list-style-type: none;
+}
+
+.info-title {
+    float: left;
+    font-size: 15px;
+}
+
+.title {
+    text-decoration-line: none;
+}
+
+#swiper-wrapper {
+    width: 430px;
+    height: 360px;
+}
+
+.swiper-slide {
+    min-width: 100%; 
+    min-height: 100%; 
+
+    width: 100%;
+    height: 100%;
 }
