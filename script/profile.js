@@ -9,19 +9,8 @@ let userId;
 let axiosReady = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-    axiosScript.onload = function () {  
-        axiosReady = true;
-    }
-
-    // 이전 페이지로 이동
-    document.getElementById("ic_close").addEventListener("click", function () {
-        // 이전 페이지(로그인)으로 이동
-        alert("이전 페이지로 이동합니다.");
-        history.back(); 
-    });
-
     // 유저 정보 반환 API
-    if(axiosReady) {
+    axiosScript.onload = function () {  
         // Axios를 사용하여 POST 요청 보내기
         axios.get(apiUrl + "/member/member-page", {
             headers: {
@@ -44,7 +33,18 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("fail", error.response);
             alert(error.response);
         });
-    };
+
+        axiosReady = true;
+    }
+
+    console.log(localStorage.getItem("jwt"));
+
+    // 이전 페이지로 이동
+    document.getElementById("ic_close").addEventListener("click", function () {
+        // 이전 페이지(로그인)으로 이동
+        alert("이전 페이지로 이동합니다.");
+        history.back(); 
+    });
 
     document.head.appendChild(axiosScript);
            
