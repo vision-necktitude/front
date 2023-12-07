@@ -3,222 +3,95 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Webcam</title>
-
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info</title>
+  <link rel="stylesheet" href="style/setting.css">
 </head>
 
-<nav class="navbar">
-  <ul class="nav_menu">
-    <li><a href="date.html">생활 습관 통계</a></li>
-    <li><a href="cam.html">내 화면</a></li>
-    <li><a href="info.html">정보</a></li>
-    <li><a href="setting.html">설정</a></li>
-  </ul>
-</nav>
-
-
-<aside class="side-bar">
-  
-
-  
-  <ul>
-    <li>
-       <a href="date.html"><img src="icon/ic_chart.png"> 생활 습관 통계</a>
-     
-    </li>
-    <li>
-      <a href="cam.html"><img src="icon/ic_user.png">내 화면</a>
-      
-    </li>
-    <li>
-      <a href="info.html"><img src="icon/ic_search.png">정보</a>
-      
-    </li>
-    <li>
-      <a href="setting.html"><img src="icon/ic_verify.png">설정</a>
-      
-    </li>
-  </ul>
-</aside>
-
-<style>
-/* 노멀라이즈 시작 */
-body, ul, li {
-  margin: 0;
-  padding: 0;
-  list-style: none;   /* 해당 태그의 list-style을 none으로 하는 것으로 ●을 제거한다 */
-}
-
-a {
-  color: inherit;   /* 부모 엘리먼트의 값을 물려받는다 */
-  text-decoration: none;    /* 해당 태그의 text-decoration 속성을 none 값으로 하는 것으로 밑줄을 제거한다 */
-}
-/* 노멀라이즈 끝 */
-
-/* 커스텀 시작 */
-.side-bar > ul ul {
-  display: none;
-}
-
-
-/* 사이드바 시작 */
-
-/* 사이드바의 너비와 높이를 변수를 통해 통제 */
-:root {
-  --side-bar-width: 270px;
-  --side-bar-height: auto;
-}
-
-.side-bar {
-  position: fixed;    /* 스크롤을 따라오도록 지정 */
-  background-color: white;
-  width: var(--side-bar-width);
-  
-  margin-top: calc((100vh - var(--side-bar-height)) / 2);    /* 사이드바 위와 아래의 마진을 동일하게 지정 */
-}
-
-
-
-/* 모든 메뉴의 a에 속성값 부여 */
-.side-bar ul > li > a {
-  display: block;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  transition: .5s;
-}
-
-/* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
-.side-bar > ul > li {
-  position: relative;
-}
-
-/* 모든 메뉴가 마우스 인식 시 반응 */
-.side-bar ul > li:hover > a {
-  background-color: #3a7f52;
-  border-bottom: 1px solid white;
-}
-
-
-
-/* 사이드바 너비의 80%만큼 왼쪽으로 이동 */
-.side-bar {
-  border-radius: 20px;
-  transform: translate(calc(var(--side-bar-width) * -0.8), 0);
-  transition: .5s;
-}
-
-/* 마우스 인식 시 원래의 위치로 이동 */
-.side-bar:hover {
-  transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
-}
-/* 사이드바 끝 */
-
-
-</style>
 <body>
+  <script src="script/setting.js"></script>
 
   <div class="container">
-    
-  
-  
- <div class="controls">
-  <a href="">
-    <button class="on" onclick="toggleState(this)">
-    <!-- 이미지가 없으므로 텍스트만 표시 -->
-    눈 깜빡임 감지
-  </button>
-  <button class="off" onclick="toggleState(this)">
-    거북목 감지
-  </button>
-  </a>
-	  <a href ="personal.html"><button id=""><img src="icon/ic_verify.png">개인정보 수집 및 이용 동의</button</a>
-	  <a href =""><button id=""><img src="icon/ic_edit_user.png">내 프로필</button></a>
-	  <a href ="termsofuse.html"><button id=""><img src="icon/ic_text.png">이용약관</button></a>
-	  <a href =""><button id=""><img src="icon/ic_security.png">개인정보 처리 방침</button></a>
-	  <a href ="index.html"><button id=""><img src="icon/ic_logout.png">로그아웃</button></a>
-	  <a href ="signup.html"><button id=""><img src="icon/ic_resign.png">회원탈퇴</button></a>
-	  
-	  </div>
+    <div id="left">
+      <nav class="navbar">
+        <ul class="navmenu">
+          <li id="list-chart">
+            <img id="chart" src="icon/ic_chart.png" width="20px" height="20px">
+            <a id="link-date" class="link" href="date.html">생활 습관 통계</a>
+          </li>
+          <li id="list-cam">
+            <img id="cam" src="icon/ic_user.png" width="20px" height="20px">
+            <a id="link-cam" class="link" href="cam.html">내 화면</a>
+          </li>
+          <li id="list-info">
+            <img id="info" src="icon/ic_search.png" width="20px" height="20px">
+            <a id="link-info" class="link" href="info.html">정보</a>
+          </li>
+          <li id="list-setting">
+            <img id="setting" src="icon/ic_verify_checked.png" width="20px" height="20px">
+            <a id="link-setting" class="link" href="setting.html">설정</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #bad2c5;
-  }
+    <div id="right">
+      <div id="setting-agree" class="setting-box">
+        <div id="eye-agree">
+          눈깜빡임 감지
+          <img id="eye-toggle" src="icon/toggle_off.png" height="20px">
+        </div>
+        <hr/>
 
-     
-            
-          
+        <div id="neck-agree">
+          거북목 감지
+          <img id="neck-toggle" src="icon/toggle_off.png" height="20px">
+        </div>
+        <hr/>
 
         
+        <div id="info-agree">
+          개인정보 수집 및 이용 동의
+          <img id="info-toggle" src="icon/toggle_off.png" height="20px">
+        </div>
 
-.container {
-position: relative;
-  background-color : white;
-            height: 500;
-            width: 750px;
-            margin: auto;
-            padding: 20px;
-            
-            border-radius:5px;
-            box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
-			
-			border-radius: 20px;
-}
-button {
-  width: 750px;
-  height: auto;
-  border: none;
-  background-color: white;
-  color: #000;
-  font-size: 16px;
-  
-  cursor: pointer;
-  text-align: left;
-  border-radius: 20px;
-}
+      </div>
 
-button:hover {
-  background-color: #4eac6e;
-  
- 
-}
- 
-    /* ON일 때의 스타일 */
-    .controls button.on {
-      background-color: #2ecc71; /* 초록색 */
-      color: #fff; /* 텍스트 색상을 흰색으로 설정 */
-    }
+      <div id="setting-else" class="setting-box">
+        <div id="else-profile" class="else">
+          <img class="else-icon" src="icon/ic_edit_user.png" width="18px" height="18px">
+          내 프로필
+        </div>
+        <hr/>
 
-    /* OFF일 때의 스타일 */
-    .controls button.off {
-      background-color: #e74c3c; /* 빨간색 */
-      color: #fff; /* 텍스트 색상을 흰색으로 설정 */
-    }
-	
-</style>
-<script>
-function toggleState(button) {
-    // 현재 클래스를 확인하여 ON/OFF를 토글
-    if (button.classList.contains("on")) {
-      // 현재 ON 상태일 때는 아무것도 변경하지 않음
-    } else {
-      // 현재 OFF 상태일 때는 ON 상태로 변경
-      button.classList.remove("off");
-      button.classList.add("on");
-    }
-  }
-  
+        <div id="else-text" class="else">
+          <img class="else-icon" src="icon/ic_text.png" width="18px" height="18px">
+          이용 약관
+        </div>
+        <hr/>       
+        
+        <div id="else-security" class="else">
+          <img class="else-icon" src="icon/ic_security.png" width="18px" height="18px">
+          개인정보 처리방침
+        </div>
+        <hr/>        
+        
+        <div id="else-logout" class="else">
+          <img class="else-icon" src="icon/ic_logout.png" width="18px" height="18px">
+          로그아웃
+        </div>
+        <hr/>  
 
-</script>
+        <div id="else-resign" class="else">
+          <img class="else-icon" src="icon/ic_resign.png" width="18px" height="18px">
+          회원 탈퇴
+        </div>
+        <hr/>
+
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+</html>
