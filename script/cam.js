@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const path = require('path');
         const {shell} = require('electron');
-        const batFilePath = path.join(__dirname, 'vision-necktitude-ai', 'env_setting.bat');
+        const batFilePath = path.join(__dirname, '..', 'vision-necktitude-ai', 'env_setting.bat');
 
         console.log(batFilePath)
         shell.openPath(batFilePath);
