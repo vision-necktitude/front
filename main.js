@@ -12,6 +12,10 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js') 
         }
     });
+
+    const logopath = path.join(__dirname, 'icon/logo.png');
+    console.log('Logo path:', logopath); // 로그 추가
+    win.setIcon(logopath);
  
     win.loadFile('index.html');
     win.webContents.openDevTools();
