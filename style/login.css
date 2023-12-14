@@ -9,8 +9,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
     width: 750px;
     height: 500px;
+
+    background: linear-gradient(#09AF69CC, #09AF69E6, #09AF69FF)
 }
 
 h1 {

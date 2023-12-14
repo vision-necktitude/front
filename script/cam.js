@@ -58,7 +58,7 @@ function timer() {
     
     document.getElementById("guideline-progress").value = count;
     
-    if(count == 6) { 
+    if(count == 11) { 
         clearInterval(time);	// 시간 초기화
         console.log("시간이 완료되었습니다.");
 
