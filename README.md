@@ -59,5 +59,30 @@
 [Vision-Necktitude AI 파트 깃허브 참고](https://github.com/vision-necktitude/computer-vision)
 <br><br>
 
-## 데모 영상
+## 데모 영상 및 상세 화면
+### 회원가입 및 로그인 화면
+![회원가입 화면](https://github.com/vision-necktitude/front/assets/83575928/66123834-6838-4bc3-9dc9-cb45ee30fa6a) <br>
+![로그인 화면](https://github.com/vision-necktitude/front/assets/83575928/eb6364d3-6fd7-43e8-8ae2-48069a494ceb) <br>
+![아이디/비밀번호 찾기 화면](https://github.com/vision-necktitude/front/assets/83575928/69007ce0-3077-4d82-934e-09ca2b5cff01) <br>
+<br>
+회원가입 및 로그인을 진행한다. 만약 아이디 혹은 비밀번호를 잊어버렸다면 아이디/비밀번호 찾기 화면에서 가입 정보를 받을 수 있다.
+
+### 안구건조증, 거북목 증후군 정보 화면
+![안구건조증 화면](https://github.com/vision-necktitude/front/assets/83575928/df1a2791-9e21-4c95-a8bb-003bc153ccd6) <br>
+![거북목 증후군 정보 화면](https://github.com/vision-necktitude/front/assets/83575928/14fad4d9-155b-4175-ad84-cc9f9c9590d4) <br>
+<br>
+안구건조증 및 거북목 증후군의 정의, 예방 수칙, 가이드라인 등을 알 수 있다.
+
+### 캠 화면
+![내 화면](https://github.com/vision-necktitude/front/assets/83575928/2b1a0dbc-7320-4c4f-8638-72d4f25c5ff0) <br>
+<br>
+웹캠을 통해 눈 깜빡임 및 거북목 감지를 진행한다. 눈 깜빡임 여부와 눈 깜빡임 간격, 거북목 여부 등을 판단한다.
+
+### 설정 및 프로필 화면
+![설정 화면](https://github.com/vision-necktitude/front/assets/83575928/2d6a9555-42e9-469f-a8de-e2e99eee24f3) <br>
+![프로필 화면](https://github.com/vision-necktitude/front/assets/83575928/ec12acc2-19eb-42ca-a2bc-7afd8aed6ff6) <br>
+<br>
+설정 및 프로필 화면에서 내 정보를 확인할 수 있다.
+
+### 데모 영상
 https://github.com/vision-necktitude/VN-Front/assets/83575928/1906dc7c-2976-416b-90ee-094f13380101
