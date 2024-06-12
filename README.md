@@ -61,7 +61,7 @@
 
 ## 데모 영상 및 상세 화면
 ### 회원가입 및 로그인 화면
-![회원가입 화면](https://github.com/vision-necktitude/front/assets/83575928/66123834-6838-4bc3-9dc9-cb45ee30fa6a) <br>
+![회원가입 화면](https://github.com/vision-necktitude/front/assets/83575928/66123834-6838-4bc3-9dc9-cb45ee30fa6a){: width="100" height="100"} <br>
 ![로그인 화면](https://github.com/vision-necktitude/front/assets/83575928/eb6364d3-6fd7-43e8-8ae2-48069a494ceb) <br>
 ![아이디/비밀번호 찾기 화면](https://github.com/vision-necktitude/front/assets/83575928/69007ce0-3077-4d82-934e-09ca2b5cff01) <br>
 <br>
