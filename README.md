@@ -57,6 +57,7 @@
 
 ## 라이브러리 및 API 상세 설명
 [Vision-Necktitude AI 파트 깃허브 참고](https://github.com/vision-necktitude/computer-vision)
+[Vision-Necktitude Server 파트 깃허브 참고](https://github.com/vision-necktitude/server)
 <br><br>
 
 ## 데모 영상 및 상세 화면
